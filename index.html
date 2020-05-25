@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script type="module" src="./scripts/main.js"></script>
+    <title>CG Algorithms</title>
+  </head>
+  <body>
+    <div class="l-divisor">
+      <nav class="c-menu">
+        <button class="c-menu__button js-menu-item" id="dda">
+          Rasterização DDA
+        </button>
+        <button class="c-menu__button js-menu-item" id="bresenham">
+          Rasterização Bresenham
+        </button>
+        <button class="c-menu__button js-menu-item" id="circle">
+          Rasterização de círculos
+        </button>
+        <button class="c-menu__button js-menu-item" id="sruToSrd">
+          Mapeamento SRU para SRD
+        </button>
+        <button class="c-menu__button js-menu-item" id="scale">
+          Transformação 2D: Escala
+        </button>
+        <button class="c-menu__button js-menu-item" id="translation">
+          Transformação 2D: Translação
+        </button>
+        <button class="c-menu__button js-menu-item" id="rotation">
+          Transformação 2D: Rotação
+        </button>
+      </nav>
+      <div class="l-view-container" id="l-view-container">
+        <div class="js-view" id="dda-view">
+          <h1>DDA</h1>
+          <form action="javascript:void(0);" method="POST" id="dda-form">
+            <label>Valor de X</label>
+            <input type="number" id="dda-x" /> <br />
+            <label>Valor de Y</label>
+            <input type="number" id="dda-y" /> <br />
+            <button type="submit">Calcular</button>
+          </form>
+        </div>
+        <div class="js-view" id="bresenham-view">
+          <h1>Bresenham</h1>
+          <form action="javascript:void(0);" method="POST" id="bresenham-form">
+            <label>Valor de X</label>
+            <input type="number" id="bresenham-x" /> <br />
+            <label>Valor de Y</label>
+            <input type="number" id="bresenham-y" /> <br />
+            <button type="submit">Calcular</button>
+          </form>
+        </div>
+        <div class="js-view" id="circle-view">
+          <p>circle ainda não está implementado</p>
+        </div>
+        <div class="js-view" id="sruToSrd-view">
+          <p>sruToSrd ainda não está implementado</p>
+        </div>
+        <div class="js-view" id="scale-view">
+          <p>scale ainda não está implementado</p>
+        </div>
+        <div class="js-view" id="translation-view">
+          <p>translation ainda não está implementado</p>
+        </div>
+        <div class="js-view" id="rotation-view">
+          <p>rotation ainda não está implementado</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

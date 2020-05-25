@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+
+.l-divisor {
+  display: flex;
+  min-height: 100vh;
+}
+
+.c-menu {
+  background-color: SlateBlue;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 5px 5px 0;
+  &__button {
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: inherit;
+    color: white;
+    &:hover {
+      background-color: DarkSlateBlue;
+    }
+    &--selected {
+      background-color: DarkSlateBlue;
+      font-weight: bold;
+    }
+  }
+}
+
+.js-view {
+  display: none;
+}

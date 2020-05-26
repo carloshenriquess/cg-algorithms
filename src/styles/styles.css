@@ -1,4 +1,12 @@
+.l-dda-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .c-dda {
+  flex: 1;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,6 +63,18 @@
   background: #584aaf;
 }
 
+.c-dda-canvas {
+  flex: 2;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.c-dda-canvas__canvas {
+  width: 300px;
+  height: 300px;
+}
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -72,6 +92,7 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 0 5px 5px 0;
+  min-width: fit-content;
 }
 .c-menu__button {
   cursor: pointer;

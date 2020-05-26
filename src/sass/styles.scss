@@ -1,5 +1,9 @@
+@import 'dda';
+
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
+  background-color: #ebf5fc;
 }
 
 .l-divisor {
@@ -29,6 +33,10 @@ body {
       font-weight: bold;
     }
   }
+}
+
+.l-view-container {
+  flex: 1;
 }
 
 .js-view {

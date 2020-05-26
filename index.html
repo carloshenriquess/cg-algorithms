@@ -2,8 +2,8 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <script type="module" src="./scripts/main.js"></script>
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+    <script type="module" src="./src/scripts/main.js"></script>
     <title>CG Algorithms</title>
   </head>
   <body>
@@ -31,16 +31,47 @@
           Transformação 2D: Rotação
         </button>
       </nav>
-      <div class="l-view-container" id="l-view-container">
+      <div class="l-view-container">
         <div class="js-view" id="dda-view">
-          <h1>DDA</h1>
-          <form action="javascript:void(0);" method="POST" id="dda-form">
-            <label>Valor de X</label>
-            <input type="number" id="dda-x" /> <br />
-            <label>Valor de Y</label>
-            <input type="number" id="dda-y" /> <br />
-            <button type="submit">Calcular</button>
-          </form>
+          <div class="c-dda">
+            <h1 class="c-dda__title">DDA</h1>
+            <form
+              class="c-dda__form"
+              action="javascript:void(0);"
+              method="POST"
+              id="dda-form"
+            >
+              <div class="c-dda__inputs">
+                <div class="c-dda__point">
+                  <h2 class="c-dda__point-title">Ponto 1</h2>
+                  <div class="c-dda__point-inputs">
+                    <div class="c-dda__form-group">
+                      <label>X</label>
+                      <input class="c-dda__input" type="number" id="dda-x1" />
+                    </div>
+                    <div class="c-dda__form-group">
+                      <label>Y</label>
+                      <input class="c-dda__input" type="number" id="dda-y1" />
+                    </div>
+                  </div>
+                </div>
+                <div class="c-dda__point">
+                  <h2 class="c-dda__point-title">Ponto 2</h2>
+                  <div class="c-dda__point-inputs">
+                    <div class="c-dda__form-group">
+                      <label>X</label>
+                      <input class="c-dda__input" type="number" id="dda-x2" />
+                    </div>
+                    <div class="c-dda__form-group">
+                      <label>Y</label>
+                      <input class="c-dda__input" type="number" id="dda-y2" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="c-dda__submit" type="submit">Calcular</button>
+            </form>
+          </div>
         </div>
         <div class="js-view" id="bresenham-view">
           <h1>Bresenham</h1>

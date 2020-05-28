@@ -24,29 +24,17 @@ export const dda = () => {
   drawAxis();
 
   const drawLine = (x1, y1, x2, y2, paintPixel) => {
-    // console.log('draw', x1, y1, x2, y2);
-    // let Xinc;
-    // let Yinc;
     const xVariation = Math.abs(x2 - x1);
     const yVariation = Math.abs(y2 - y1);
     const biggerVariation = yVariation > xVariation ? yVariation : xVariation;
-    paintPixel(Math.round(x1), Math.round(y1));
-    console.log('paint', 'X:', x1, 'Y:', y1);
+    let x = x1;
+    let y = y1;
+    paintPixel(Math.round(x), Math.round(y));
     for (var i = 1; i <= biggerVariation; i++) {
-      x1 = x1 + xVariation / biggerVariation;
-      y1 = y1 + yVariation / biggerVariation;
-      paintPixel(Math.round(x1), Math.round(y1));
-      console.log('paint', 'X:', x1, 'Y:', y1);
+      x += (xVariation / biggerVariation) * (x1 < x2 ? 1 : -1);
+      y += (yVariation / biggerVariation) * (y1 < y2 ? 1 : -1);
+      paintPixel(Math.round(x), Math.round(y));
     }
-    // Xinc = (x2 - x1) / biggerVariation;
-    // Yinc = (y2 - y1) / biggerVariation;
-    // let x = x1;
-    // let y = y1;
-    //   while(X<X2){
-    //     paintPixel(Math.round(X) ,Math.round(Y));
-    //     X = X + Xinc;
-    //     Y = Y + Yinc;
-    //  }
   };
 
   const onSubmit = () => {

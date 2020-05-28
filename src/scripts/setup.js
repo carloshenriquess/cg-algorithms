@@ -38,5 +38,5 @@ export const setupNavigation = () => {
 };
 
 export const setupViews = () => {
-  import('./actions.js');
+  import('./setup-views.js');
 };

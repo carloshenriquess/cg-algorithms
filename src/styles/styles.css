@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 20px;
 }
 
 .c-dda {
@@ -57,7 +58,7 @@
   transition: transform 150ms;
 }
 .c-dda__submit:hover {
-  transform: scale(1.05);
+  transform: scale(1.005);
 }
 .c-dda__submit:active {
   background: #584aaf;
@@ -69,10 +70,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.c-dda-canvas__canvas {
-  width: 300px;
-  height: 300px;
 }
 
 body {
@@ -108,7 +105,6 @@ body {
 }
 .c-menu__button--selected {
   background-color: DarkSlateBlue;
-  font-weight: bold;
 }
 
 .l-view-container {

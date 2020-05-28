@@ -1,2 +1,2 @@
-import './dda.js';
-import './bresenham.js';
+import './views/dda.js';
+import './views/bresenham.js';

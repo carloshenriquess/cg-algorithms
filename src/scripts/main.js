@@ -1,4 +1,5 @@
-import { setupNavigation, setupViews } from './setup.js';
+import { navigationFactory, setupViews } from './setup.js';
 
-setupNavigation();
+const navigation = navigationFactory();
+navigation.to('bresenham');
 setupViews();

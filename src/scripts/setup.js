@@ -1,7 +1,7 @@
 const buttons = Array.from(document.getElementsByClassName('js-menu-item'));
 const items = buttons.map(button => button.id);
 
-export const setupNavigation = () => {
+export const navigationFactory = () => {
   let selectedItem;
 
   const clearViewsButSelected = () => {
@@ -34,7 +34,10 @@ export const setupNavigation = () => {
   for (const button of buttons) {
     button.addEventListener('click', handleMenuClick);
   }
-  selectItem(items[0]);
+
+  return {
+    to: selectItem,
+  };
 };
 
 export const setupViews = () => {

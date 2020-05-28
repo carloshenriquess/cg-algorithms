@@ -72,6 +72,80 @@
   align-items: center;
 }
 
+.l-bresenham-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.c-bresenham {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.c-bresenham__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.c-bresenham__inputs {
+  display: flex;
+}
+.c-bresenham__point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 8px 16px;
+  box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.c-bresenham__point:not(:first-child) {
+  margin-left: 8px;
+}
+.c-bresenham__point-title {
+  margin: 0;
+  font-size: 18px;
+}
+.c-bresenham__point-inputs {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
+.c-bresenham__input {
+  width: 40px;
+  border-width: 1px;
+  border-radius: 5px;
+}
+.c-bresenham__submit {
+  cursor: pointer;
+  border: none;
+  margin-top: 16px;
+  padding: 10px 30px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  background-color: SlateBlue;
+  border-radius: 5px;
+  transition: transform 150ms;
+}
+.c-bresenham__submit:hover {
+  transform: scale(1.005);
+}
+.c-bresenham__submit:active {
+  background: #584aaf;
+}
+
+.c-bresenham-canvas {
+  flex: 2;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;

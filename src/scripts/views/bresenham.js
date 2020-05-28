@@ -1,15 +1,15 @@
-import { dda } from './cg-algorithms.js';
+import { bresenham } from '../cg-algorithms.js';
 
 const canvasSize = 300;
 const minResolution = 5;
 const canvasBgColor = '#C6C3FF';
 const lineColor = 'SlateBlue';
-const canvas = document.getElementById('dda-canvas');
+const canvas = document.getElementById('bresenham-canvas');
 const context = canvas.getContext('2d');
-const inputX1 = document.getElementById('dda-x1');
-const inputY1 = document.getElementById('dda-y1');
-const inputX2 = document.getElementById('dda-x2');
-const inputY2 = document.getElementById('dda-y2');
+const inputX1 = document.getElementById('bresenham-x1');
+const inputY1 = document.getElementById('bresenham-y1');
+const inputX2 = document.getElementById('bresenham-x2');
+const inputY2 = document.getElementById('bresenham-y2');
 
 const fillCanvas = color => {
   context.beginPath();
@@ -66,11 +66,11 @@ const onSubmit = () => {
 
   fillCanvas(canvasBgColor);
   drawAxis();
-  dda(x1, y1, x2, y2, drawPixel);
+  bresenham(x1, y1, x2, y2, drawPixel);
 };
 
 const setupListener = () => {
-  const form = document.getElementById('dda-form');
+  const form = document.getElementById('bresenham-form');
   form.addEventListener('submit', onSubmit);
 };
 

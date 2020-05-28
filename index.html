@@ -100,14 +100,73 @@
           </div>
         </div>
         <div class="js-view" id="bresenham-view">
-          <h1>Bresenham</h1>
-          <form action="javascript:void(0);" method="POST" id="bresenham-form">
-            <label>Valor de X</label>
-            <input type="number" id="bresenham-x" /> <br />
-            <label>Valor de Y</label>
-            <input type="number" id="bresenham-y" /> <br />
-            <button type="submit">Calcular</button>
-          </form>
+          <div class="l-bresenham-container">
+            <div class="c-bresenham">
+              <h1 class="c-bresenham__title">Bresenham</h1>
+              <form
+                class="c-bresenham__form"
+                action="javascript:void(0);"
+                method="POST"
+                id="bresenham-form"
+              >
+                <div class="c-bresenham__inputs">
+                  <div class="c-bresenham__point">
+                    <h2 class="c-bresenham__point-title">Ponto 1</h2>
+                    <div class="c-bresenham__point-inputs">
+                      <div class="c-bresenham__form-group">
+                        <label>X</label>
+                        <input
+                          class="c-bresenham__input"
+                          type="number"
+                          value="0"
+                          id="bresenham-x1"
+                        />
+                      </div>
+                      <div class="c-bresenham__form-group">
+                        <label>Y</label>
+                        <input
+                          class="c-bresenham__input"
+                          type="number"
+                          value="0"
+                          id="bresenham-y1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-bresenham__point">
+                    <h2 class="c-bresenham__point-title">Ponto 2</h2>
+                    <div class="c-bresenham__point-inputs">
+                      <div class="c-bresenham__form-group">
+                        <label>X</label>
+                        <input
+                          class="c-bresenham__input"
+                          type="number"
+                          value="0"
+                          id="bresenham-x2"
+                        />
+                      </div>
+                      <div class="c-bresenham__form-group">
+                        <label>Y</label>
+                        <input
+                          class="c-bresenham__input"
+                          type="number"
+                          value="0"
+                          id="bresenham-y2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="c-bresenham__submit" type="submit">
+                  Calcular
+                </button>
+              </form>
+            </div>
+            <div class="c-bresenham-canvas">
+              <h1 class="c-bresenham-canvas__title">Resultado</h1>
+              <canvas id="bresenham-canvas"></canvas>
+            </div>
+          </div>
         </div>
         <div class="js-view" id="circle-view">
           <p>circle ainda não está implementado</p>

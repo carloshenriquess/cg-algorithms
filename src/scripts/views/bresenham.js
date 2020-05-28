@@ -1,6 +1,6 @@
 import { bresenham } from '../cg-algorithms.js';
 
-const canvasSize = 300;
+const canvasSize = 500;
 const minResolution = 5;
 const canvasBgColor = '#C6C3FF';
 const lineColor = 'SlateBlue';

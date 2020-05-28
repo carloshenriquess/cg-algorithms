@@ -1,5 +1,5 @@
-import { dda } from './dda.js';
-import { bresenham } from './bresenham.js';
+import './dda.js';
+import './bresenham.js';
 
 export const actions = {
   dda,

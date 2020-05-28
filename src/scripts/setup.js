@@ -1,5 +1,3 @@
-import { actions } from './actions.js';
-
 const buttons = Array.from(document.getElementsByClassName('js-menu-item'));
 const items = buttons.map(button => button.id);
 
@@ -40,9 +38,5 @@ export const setupNavigation = () => {
 };
 
 export const setupViews = () => {
-  for (const item of items) {
-    if (actions[item]) {
-      actions[item]();
-    }
-  }
+  import('./actions.js');
 };

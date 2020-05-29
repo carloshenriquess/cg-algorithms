@@ -33,3 +33,15 @@ export const bresenham = (x1, y1, x2, y2, drawPixel) => {
     drawPixel(x1, y1);
   }
 };
+
+export const sruToSrdFactory = (sruLimits, srdLimits) => {
+  const xToSrd = x =>
+    ((x - sruLimits.minX) * (srdLimits.maxX - srdLimits.minX)) /
+      (sruLimits.maxX - sruLimits.minX) +
+    srdLimits.minX;
+  const yToSrd = y =>
+    ((y - sruLimits.minY) * (srdLimits.minY - srdLimits.maxY)) /
+      (sruLimits.maxY - sruLimits.minY) +
+    srdLimits.maxY;
+  return (x, y) => [xToSrd(x), yToSrd(y)];
+};

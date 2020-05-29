@@ -1,4 +1,4 @@
-import { dda } from '../cg-algorithms.js';
+import { dda, sruToSrdFactory } from '../cg-algorithms.js';
 
 const canvasSize = 300;
 const minResolution = 5;
@@ -37,19 +37,24 @@ const drawAxis = () => {
 };
 
 const drawPixelFactory = (max, lineColor) => {
-  const pixelSize = canvasSize / (max * 2 + 1);
-  return (x, y) => {
+  const pixelSize = canvasSize / (max + 1);
+  const drawPixelInCanvas = (x, y) => {
     context.beginPath();
-    context.rect(
-      x * pixelSize + canvasSize / 2 - pixelSize / 2,
-      -y * pixelSize + canvasSize / 2 - pixelSize / 2,
-      pixelSize,
-      pixelSize,
-    );
+    context.rect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
     context.fillStyle = lineColor;
     context.fill();
     context.closePath();
   };
+
+  const sruLimits = {
+    minX: 0,
+    minY: 0,
+    maxX: max,
+    maxY: max,
+  };
+  const srdLimits = sruLimits;
+  const sruToSrd = sruToSrdFactory(sruLimits, srdLimits);
+  return (x, y) => drawPixelInCanvas(...sruToSrd(x, y));
 };
 
 const onSubmit = () => {

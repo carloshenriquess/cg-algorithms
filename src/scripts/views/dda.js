@@ -12,11 +12,8 @@ const inputY2 = document.getElementById('dda-y2');
 const inputResolution = document.getElementById('dda-resolution');
 
 const fillCanvas = color => {
-  context.beginPath();
-  context.rect(0, 0, canvasSize, canvasSize);
   context.fillStyle = color;
-  context.fill();
-  context.closePath();
+  context.fillRect(0, 0, canvasSize, canvasSize);
 };
 
 const setupCanvas = () => {
@@ -28,11 +25,8 @@ const setupCanvas = () => {
 const drawPixelFactory = (resolution, lineColor) => {
   const pixelSize = canvasSize / resolution;
   const drawPixelInCanvas = (x, y) => {
-    context.beginPath();
-    context.rect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
     context.fillStyle = lineColor;
-    context.fill();
-    context.closePath();
+    context.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
   };
 
   const sruLimits = {
@@ -67,22 +61,22 @@ const setupSubmitListener = () => {
 const setupInputListeners = () => {
   inputX1.addEventListener('input', event => {
     if (+inputResolution.value < +event.target.value) {
-      inputResolution.value = event.target.value;
+      inputResolution.value = event.target.value + 1;
     }
   });
   inputY1.addEventListener('input', event => {
     if (+inputResolution.value < +event.target.value) {
-      inputResolution.value = event.target.value;
+      inputResolution.value = event.target.value + 1;
     }
   });
   inputX2.addEventListener('input', event => {
     if (+inputResolution.value < +event.target.value) {
-      inputResolution.value = event.target.value;
+      inputResolution.value = event.target.value + 1;
     }
   });
   inputY2.addEventListener('input', event => {
     if (+inputResolution.value < +event.target.value) {
-      inputResolution.value = event.target.value;
+      inputResolution.value = event.target.value + 1;
     }
   });
 };

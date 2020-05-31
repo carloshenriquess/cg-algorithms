@@ -76,8 +76,31 @@ export const circle = (x1, xy, radius, drawPixel) => {
   }
 };
 
-export const scale = (object, scaleX, scaleY) =>
-  object.map(([x, y]) => [x * scaleX, y * scaleY]);
+export const scale = (object, scaleX, scaleY) => {
+  const scale = (x, y) => {
+    const resultX = x * scaleX;
+    const resultY = y * scaleY;
+    return [resultX, resultY];
+  };
+  return object.map(([x, y]) => scale(x, y));
+};
 
-export const translation = (object, translateX, translateY) =>
-  object.map(([x, y]) => [x + translateX, y + translateY]);
+export const translation = (object, translateX, translateY) => {
+  const translate = (x, y) => {
+    const resultX = x + translateX;
+    const resultY = y + translateY;
+    return [resultX, resultY];
+  };
+  return object.map(([x, y]) => translate(x, y));
+};
+
+export const rotation = (object, angle) => {
+  const degreeToRadian = degree => (degree * Math.PI) / 180;
+  const radian = degreeToRadian(angle);
+  const rotate = (x, y) => {
+    const resultX = x * Math.cos(radian) - y * Math.sin(radian);
+    const resultY = x * Math.sin(radian) + y * Math.cos(radian);
+    return [resultX, resultY];
+  };
+  return object.map(([x, y]) => rotate(x, y));
+};

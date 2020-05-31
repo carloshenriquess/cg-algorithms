@@ -610,7 +610,71 @@
           </div>
         </div>
         <div class="js-view" id="rotation-view">
-          <p>rotation ainda não está implementado</p>
+          <div class="l-rotation-container">
+            <div class="c-rotation">
+              <h1 class="c-rotation__title">Rotação</h1>
+              <form
+                class="c-rotation__form"
+                action="javascript:void(0);"
+                method="POST"
+                id="rotation-form"
+              >
+                <div class="c-rotation__inputs">
+                  <div class="c-rotation__card">
+                    <h2 class="c-rotation__card-title">Ângulo</h2>
+                    <div class="c-rotation__card-inputs">
+                      <div class="c-rotation__form-group">
+                        <input
+                          class="c-rotation__input"
+                          type="number"
+                          id="rotation-angle"
+                          value="0"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-rotation__card">
+                    <h2 class="c-rotation__card-title">Resolução</h2>
+                    <div class="c-rotation__card-inputs">
+                      <div class="c-rotation__form-group">
+                        <input
+                          class="c-rotation__input"
+                          type="number"
+                          id="rotation-resolution"
+                          min="1"
+                          value="60"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-rotation__card">
+                    <h2 class="c-rotation__card-title">Grossura</h2>
+                    <div class="c-rotation__card-inputs">
+                      <div class="c-rotation__form-group">
+                        <input
+                          class="c-rotation__input"
+                          type="number"
+                          id="rotation-stroke"
+                          min="1"
+                          value="1"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="c-rotation__submit" type="submit">
+                  Calcular
+                </button>
+              </form>
+            </div>
+            <div class="c-rotation-canvas">
+              <h1 class="c-rotation-canvas__title">Resultado</h1>
+              <canvas id="rotation-canvas"></canvas>
+            </div>
+          </div>
         </div>
       </div>
     </div>

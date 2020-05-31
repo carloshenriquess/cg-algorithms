@@ -25,17 +25,6 @@ const setupCanvas = () => {
   fillCanvas(canvasBgColor);
 };
 
-const drawAxis = () => {
-  context.beginPath();
-  context.moveTo(0, canvasSize / 2);
-  context.lineTo(canvasSize, canvasSize / 2);
-  context.moveTo(canvasSize / 2, 0);
-  context.lineTo(canvasSize / 2, canvasSize);
-  context.lineWidth = 2;
-  context.stroke();
-  context.closePath();
-};
-
 const drawPixelFactory = (max, lineColor) => {
   const pixelSize = canvasSize / (max + 1);
   const drawPixelInCanvas = (x, y) => {
@@ -70,7 +59,6 @@ const onSubmit = () => {
   const drawPixel = drawPixelFactory(max, lineColor);
 
   fillCanvas(canvasBgColor);
-  drawAxis();
   dda(x1, y1, x2, y2, drawPixel);
 };
 
@@ -80,5 +68,4 @@ const setupListener = () => {
 };
 
 setupCanvas();
-drawAxis();
 setupListener();

@@ -1,5 +1,12 @@
 @import 'dda';
 @import 'bresenham';
+@import 'circle';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

@@ -45,3 +45,33 @@ export const sruToSrdFactory = (sruLimits, srdLimits) => {
     srdLimits.maxY;
   return (x, y) => [xToSrd(x), yToSrd(y)];
 };
+
+export const circle = (x1, xy, radius, drawPixel) => {
+  let x = radius - 1;
+  let y = 0;
+  let dx = 1;
+  let dy = 1;
+  const diameter = radius * 2;
+  let decision = dx - diameter; //Critério de decisão
+
+  while (x >= y) {
+    drawPixel(x + x1, y + xy);
+    drawPixel(y + x1, x + xy);
+    drawPixel(-x + x1, y + xy);
+    drawPixel(-y + x1, x + xy);
+    drawPixel(-x + x1, -y + xy);
+    drawPixel(-y + x1, -x + xy);
+    drawPixel(x + x1, -y + xy);
+    drawPixel(y + x1, -x + xy);
+    if (decision <= 0) {
+      y++;
+      decision += dy; // Muda o critério de decisão para y -> y+1
+      dy += 2;
+    }
+    if (decision > 0) {
+      x--;
+      dx += 2;
+      decision += -diameter + dx; // Muda para y -> y+1, x -> x-1
+    }
+  }
+};

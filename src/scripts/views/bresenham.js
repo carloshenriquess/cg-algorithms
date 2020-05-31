@@ -25,19 +25,8 @@ const setupCanvas = () => {
   fillCanvas(canvasBgColor);
 };
 
-const drawAxis = () => {
-  context.beginPath();
-  context.moveTo(0, canvasSize / 2);
-  context.lineTo(canvasSize, canvasSize / 2);
-  context.moveTo(canvasSize / 2, 0);
-  context.lineTo(canvasSize / 2, canvasSize);
-  context.lineWidth = 2;
-  context.stroke();
-  context.closePath();
-};
-
-const drawPixelFactory = (max, lineColor) => {
-  const pixelSize = canvasSize / (max + 1);
+const drawPixelFactory = (resolution, lineColor) => {
+  const pixelSize = canvasSize / (resolution + 1);
   const drawPixelInCanvas = (x, y) => {
     context.beginPath();
     context.rect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
@@ -49,8 +38,8 @@ const drawPixelFactory = (max, lineColor) => {
   const sruLimits = {
     minX: 0,
     minY: 0,
-    maxX: max,
-    maxY: max,
+    maxX: resolution,
+    maxY: resolution,
   };
   const srdLimits = sruLimits;
   const sruToSrd = sruToSrdFactory(sruLimits, srdLimits);
@@ -63,14 +52,18 @@ const onSubmit = () => {
   const x2 = (inputX2.value = +inputX2.value || 0);
   const y2 = (inputY2.value = +inputY2.value || 0);
 
-  let max = Math.max(Math.abs(x1), Math.abs(y1), Math.abs(x2), Math.abs(y2));
-  if (max < minResolution) {
-    max = minResolution;
+  let resolution = Math.max(
+    Math.abs(x1),
+    Math.abs(y1),
+    Math.abs(x2),
+    Math.abs(y2),
+  );
+  if (resolution < minResolution) {
+    resolution = minResolution;
   }
-  const drawPixel = drawPixelFactory(max, lineColor);
+  const drawPixel = drawPixelFactory(resolution, lineColor);
 
   fillCanvas(canvasBgColor);
-  drawAxis();
   bresenham(x1, y1, x2, y2, drawPixel);
 };
 
@@ -80,5 +73,4 @@ const setupListener = () => {
 };
 
 setupCanvas();
-drawAxis();
 setupListener();

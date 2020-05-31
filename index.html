@@ -169,7 +169,80 @@
           </div>
         </div>
         <div class="js-view" id="circle-view">
-          <p>circle ainda não está implementado</p>
+          <div class="l-circle-container">
+            <div class="c-circle">
+              <h1 class="c-circle__title">Circle</h1>
+              <form
+                class="c-circle__form"
+                action="javascript:void(0);"
+                method="POST"
+                id="circle-form"
+              >
+                <div class="c-circle__inputs">
+                  <div class="c-circle__point">
+                    <h2 class="c-circle__point-title">Centro</h2>
+                    <div class="c-circle__point-inputs">
+                      <div class="c-circle__form-group">
+                        <label>X</label>
+                        <input
+                          class="c-circle__input"
+                          type="number"
+                          id="circle-x"
+                          min="0"
+                          required
+                        />
+                      </div>
+                      <div class="c-circle__form-group">
+                        <label>Y</label>
+                        <input
+                          class="c-circle__input"
+                          type="number"
+                          id="circle-y"
+                          min="0"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-circle__point">
+                    <h2 class="c-circle__point-title">Raio</h2>
+                    <div class="c-circle__point-inputs">
+                      <div class="c-circle__form-group">
+                        <input
+                          class="c-circle__input"
+                          type="number"
+                          min="1"
+                          required
+                          id="circle-radius"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-circle__point">
+                    <h2 class="c-circle__point-title">Resolução</h2>
+                    <div class="c-circle__point-inputs">
+                      <div class="c-circle__form-group">
+                        <input
+                          class="c-circle__input"
+                          type="number"
+                          min="0"
+                          required
+                          id="circle-resolution"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="c-circle__submit" type="submit">
+                  Calcular
+                </button>
+              </form>
+            </div>
+            <div class="c-circle-canvas">
+              <h1 class="c-circle-canvas__title">Resultado</h1>
+              <canvas id="circle-canvas"></canvas>
+            </div>
+          </div>
         </div>
         <div class="js-view" id="sruToSrd-view">
           <p>sruToSrd ainda não está implementado</p>

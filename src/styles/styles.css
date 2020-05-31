@@ -146,6 +146,103 @@
   align-items: center;
 }
 
+.l-circle-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.c-circle {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.c-circle__form {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.c-circle__inputs {
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.c-circle__point {
+  width: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 8px 16px;
+  box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+.c-circle__point:not(:first-child) {
+  margin-left: 8px;
+}
+.c-circle__point-title {
+  margin: 0;
+  font-size: 18px;
+}
+.c-circle__point-inputs {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
+.c-circle__form-group {
+  display: flex;
+  align-items: center;
+}
+.c-circle__form-label {
+  margin-right: 5px;
+}
+.c-circle__input {
+  width: 100%;
+  border-width: 1px;
+  border-radius: 5px;
+}
+.c-circle__submit {
+  cursor: pointer;
+  border: none;
+  margin-top: 8px;
+  padding: 10px 30px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  background-color: SlateBlue;
+  border-radius: 5px;
+  transition: transform 150ms;
+}
+.c-circle__submit:hover {
+  transform: scale(1.05);
+}
+.c-circle__submit:active {
+  background-color: #584aaf;
+}
+.c-circle__submit:disabled {
+  background-color: #a296ee;
+  cursor: not-allowed;
+}
+
+.c-circle-canvas {
+  flex: 1;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;

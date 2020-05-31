@@ -40,7 +40,6 @@ const onSubmit = () => {
   const [srdX, srdY] = sruToSrd(sruX, sruY);
   inputSrdX.value = srdX;
   inputSrdY.value = srdY;
-  console.log(srdX, srdY);
 };
 
 const setupSubmitListener = () => {

@@ -75,3 +75,6 @@ export const circle = (x1, xy, radius, drawPixel) => {
     }
   }
 };
+
+export const scale = (object, scaleX, scaleY) =>
+  object.map(([x, y]) => [x * scaleX, y * scaleY]);

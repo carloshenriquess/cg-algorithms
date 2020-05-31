@@ -452,7 +452,84 @@
           </div>
         </div>
         <div class="js-view" id="scale-view">
-          <p>scale ainda não está implementado</p>
+          <div class="l-scale-container">
+            <div class="c-scale">
+              <h1 class="c-scale__title">Escala</h1>
+              <form
+                class="c-scale__form"
+                action="javascript:void(0);"
+                method="POST"
+                id="scale-form"
+              >
+                <div class="c-scale__inputs">
+                  <div class="c-scale__card">
+                    <h2 class="c-scale__card-title">Escala (%)</h2>
+                    <div class="c-scale__card-inputs">
+                      <div class="c-scale__form-group">
+                        <label class="c-scale__form-label">X</label>
+                        <input
+                          class="c-scale__input"
+                          type="number"
+                          id="scale-x"
+                          min="1"
+                          value="100"
+                          required
+                        />
+                      </div>
+                      <div class="c-scale__form-group">
+                        <label class="c-scale__form-label">Y</label>
+                        <input
+                          class="c-scale__input"
+                          type="number"
+                          id="scale-y"
+                          min="1"
+                          value="100"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-scale__card">
+                    <h2 class="c-scale__card-title">Resolução</h2>
+                    <div class="c-scale__card-inputs">
+                      <div class="c-scale__form-group">
+                        <input
+                          class="c-scale__input"
+                          type="number"
+                          id="scale-resolution"
+                          min="1"
+                          value="60"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-scale__card">
+                    <h2 class="c-scale__card-title">Grossura</h2>
+                    <div class="c-scale__card-inputs">
+                      <div class="c-scale__form-group">
+                        <input
+                          class="c-scale__input"
+                          type="number"
+                          id="scale-stroke"
+                          min="1"
+                          value="1"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="c-scale__submit" type="submit">
+                  Calcular
+                </button>
+              </form>
+            </div>
+            <div class="c-scale-canvas">
+              <h1 class="c-scale-canvas__title">Resultado</h1>
+              <canvas id="scale-canvas"></canvas>
+            </div>
+          </div>
         </div>
         <div class="js-view" id="translation-view">
           <p>translation ainda não está implementado</p>

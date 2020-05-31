@@ -51,6 +51,9 @@
   &__form-label {
     margin-right: 5px;
   }
+  &__form-label {
+    margin-right: 5px;
+  }
   &__input {
     width: 100%;
     border-width: 1px;
@@ -72,10 +75,6 @@
     }
     &:active {
       background-color: #584aaf;
-    }
-    &:disabled {
-      background-color: #a296ee;
-      cursor: not-allowed;
     }
   }
 }

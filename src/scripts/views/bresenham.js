@@ -1,7 +1,6 @@
 import { bresenham, sruToSrdFactory } from '../cg-algorithms.js';
 
 const canvasSize = 300;
-const minResolution = 5;
 const canvasBgColor = '#C6C3FF';
 const lineColor = 'SlateBlue';
 const canvas = document.getElementById('bresenham-canvas');
@@ -10,6 +9,7 @@ const inputX1 = document.getElementById('bresenham-x1');
 const inputY1 = document.getElementById('bresenham-y1');
 const inputX2 = document.getElementById('bresenham-x2');
 const inputY2 = document.getElementById('bresenham-y2');
+const inputResolution = document.getElementById('bresenham-resolution');
 
 const fillCanvas = color => {
   context.beginPath();
@@ -26,7 +26,7 @@ const setupCanvas = () => {
 };
 
 const drawPixelFactory = (resolution, lineColor) => {
-  const pixelSize = canvasSize / (resolution + 1);
+  const pixelSize = canvasSize / resolution;
   const drawPixelInCanvas = (x, y) => {
     context.beginPath();
     context.rect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
@@ -51,26 +51,46 @@ const onSubmit = () => {
   const y1 = (inputY1.value = +inputY1.value || 0);
   const x2 = (inputX2.value = +inputX2.value || 0);
   const y2 = (inputY2.value = +inputY2.value || 0);
+  const resolution = (inputResolution.value = +inputResolution.value || 0);
 
-  let resolution = Math.max(
-    Math.abs(x1),
-    Math.abs(y1),
-    Math.abs(x2),
-    Math.abs(y2),
-  );
-  if (resolution < minResolution) {
-    resolution = minResolution;
-  }
   const drawPixel = drawPixelFactory(resolution, lineColor);
 
   fillCanvas(canvasBgColor);
   bresenham(x1, y1, x2, y2, drawPixel);
 };
 
-const setupListener = () => {
+const setupSubmitListener = () => {
   const form = document.getElementById('bresenham-form');
   form.addEventListener('submit', onSubmit);
 };
 
+const setupInputListeners = () => {
+  inputX1.addEventListener('input', event => {
+    if (+inputResolution.value < +event.target.value) {
+      inputResolution.value = event.target.value;
+    }
+  });
+  inputY1.addEventListener('input', event => {
+    if (+inputResolution.value < +event.target.value) {
+      inputResolution.value = event.target.value;
+    }
+  });
+  inputX2.addEventListener('input', event => {
+    if (+inputResolution.value < +event.target.value) {
+      inputResolution.value = event.target.value;
+    }
+  });
+  inputY2.addEventListener('input', event => {
+    if (+inputResolution.value < +event.target.value) {
+      inputResolution.value = event.target.value;
+    }
+  });
+};
+
+const setupListeners = () => {
+  setupSubmitListener();
+  setupInputListeners();
+};
+
 setupCanvas();
-setupListener();
+setupListeners();

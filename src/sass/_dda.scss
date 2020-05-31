@@ -12,19 +12,25 @@
   align-items: center;
   &__form {
     display: flex;
+    max-width: 100%;
     flex-direction: column;
     align-items: center;
   }
   &__inputs {
     display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   &__point {
+    width: 128px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 8px 8px 16px;
     box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    margin-bottom: 8px;
     &:not(:first-child) {
       margin-left: 8px;
     }
@@ -38,15 +44,22 @@
     display: flex;
     align-items: center;
   }
+  &__form-group {
+    display: flex;
+    align-items: center;
+  }
+  &__form-label {
+    margin-right: 5px;
+  }
   &__input {
-    width: 40px;
+    width: 100%;
     border-width: 1px;
     border-radius: 5px;
   }
   &__submit {
     cursor: pointer;
     border: none;
-    margin-top: 16px;
+    margin-top: 8px;
     padding: 10px 30px;
     font-size: 17px;
     font-weight: bold;
@@ -55,7 +68,7 @@
     border-radius: 5px;
     transition: transform 150ms;
     &:hover {
-      transform: scale(1.005);
+      transform: scale(1.05);
     }
     &:active {
       background: #584aaf;
@@ -64,7 +77,7 @@
 }
 
 .c-dda-canvas {
-  flex: 2;
+  flex: 1;
   padding: 0 32px;
   display: flex;
   flex-direction: column;

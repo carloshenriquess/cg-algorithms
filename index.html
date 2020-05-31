@@ -47,21 +47,23 @@
                     <h2 class="c-dda__point-title">Ponto 1</h2>
                     <div class="c-dda__point-inputs">
                       <div class="c-dda__form-group">
-                        <label>X</label>
+                        <label class="c-dda__form-label">X</label>
                         <input
                           class="c-dda__input"
                           type="number"
-                          value="0"
                           id="dda-x1"
+                          required
+                          min="0"
                         />
                       </div>
                       <div class="c-dda__form-group">
-                        <label>Y</label>
+                        <label class="c-dda__form-label">Y</label>
                         <input
                           class="c-dda__input"
                           type="number"
-                          value="0"
                           id="dda-y1"
+                          required
+                          min="0"
                         />
                       </div>
                     </div>
@@ -70,21 +72,37 @@
                     <h2 class="c-dda__point-title">Ponto 2</h2>
                     <div class="c-dda__point-inputs">
                       <div class="c-dda__form-group">
-                        <label>X</label>
+                        <label class="c-circle__form-label">X</label>
                         <input
                           class="c-dda__input"
                           type="number"
-                          value="0"
                           id="dda-x2"
+                          required
+                          min="0"
                         />
                       </div>
                       <div class="c-dda__form-group">
-                        <label>Y</label>
+                        <label class="c-circle__form-label">Y</label>
                         <input
                           class="c-dda__input"
                           type="number"
-                          value="0"
                           id="dda-y2"
+                          required
+                          min="0"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-dda__point">
+                    <h2 class="c-dda__point-title">Resolução</h2>
+                    <div class="c-dda__point-inputs">
+                      <div class="c-dda__form-group">
+                        <input
+                          class="c-dda__input"
+                          type="number"
+                          id="dda-resolution"
+                          required
+                          min="1"
                         />
                       </div>
                     </div>
@@ -114,21 +132,23 @@
                     <h2 class="c-bresenham__point-title">Ponto 1</h2>
                     <div class="c-bresenham__point-inputs">
                       <div class="c-bresenham__form-group">
-                        <label>X</label>
+                        <label class="c-bresenham__form-label">X</label>
                         <input
                           class="c-bresenham__input"
                           type="number"
-                          value="0"
                           id="bresenham-x1"
+                          required
+                          min="0"
                         />
                       </div>
                       <div class="c-bresenham__form-group">
-                        <label>Y</label>
+                        <label class="c-bresenham__form-label">Y</label>
                         <input
                           class="c-bresenham__input"
                           type="number"
-                          value="0"
                           id="bresenham-y1"
+                          required
+                          min="0"
                         />
                       </div>
                     </div>
@@ -137,21 +157,37 @@
                     <h2 class="c-bresenham__point-title">Ponto 2</h2>
                     <div class="c-bresenham__point-inputs">
                       <div class="c-bresenham__form-group">
-                        <label>X</label>
+                        <label class="c-circle__form-label">X</label>
                         <input
                           class="c-bresenham__input"
                           type="number"
-                          value="0"
                           id="bresenham-x2"
+                          required
+                          min="0"
                         />
                       </div>
                       <div class="c-bresenham__form-group">
-                        <label>Y</label>
+                        <label class="c-circle__form-label">Y</label>
                         <input
                           class="c-bresenham__input"
                           type="number"
-                          value="0"
                           id="bresenham-y2"
+                          required
+                          min="0"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-bresenham__point">
+                    <h2 class="c-bresenham__point-title">Resolução</h2>
+                    <div class="c-bresenham__point-inputs">
+                      <div class="c-bresenham__form-group">
+                        <input
+                          class="c-bresenham__input"
+                          type="number"
+                          id="bresenham-resolution"
+                          required
+                          min="1"
                         />
                       </div>
                     </div>
@@ -183,7 +219,7 @@
                     <h2 class="c-circle__point-title">Centro</h2>
                     <div class="c-circle__point-inputs">
                       <div class="c-circle__form-group">
-                        <label>X</label>
+                        <label class="c-circle__form-label">X</label>
                         <input
                           class="c-circle__input"
                           type="number"
@@ -193,7 +229,7 @@
                         />
                       </div>
                       <div class="c-circle__form-group">
-                        <label>Y</label>
+                        <label class="c-circle__form-label">Y</label>
                         <input
                           class="c-circle__input"
                           type="number"
@@ -211,9 +247,9 @@
                         <input
                           class="c-circle__input"
                           type="number"
+                          id="circle-radius"
                           min="1"
                           required
-                          id="circle-radius"
                         />
                       </div>
                     </div>
@@ -225,9 +261,9 @@
                         <input
                           class="c-circle__input"
                           type="number"
-                          min="0"
-                          required
                           id="circle-resolution"
+                          min="1"
+                          required
                         />
                       </div>
                     </div>

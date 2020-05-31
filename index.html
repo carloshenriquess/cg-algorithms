@@ -18,7 +18,7 @@
         <button class="c-menu__button js-menu-item" id="circle">
           Rasterização de círculos
         </button>
-        <button class="c-menu__button js-menu-item" id="sruToSrd">
+        <button class="c-menu__button js-menu-item" id="srusrd">
           Mapeamento SRU para SRD
         </button>
         <button class="c-menu__button js-menu-item" id="scale">
@@ -280,8 +280,168 @@
             </div>
           </div>
         </div>
-        <div class="js-view" id="sruToSrd-view">
-          <p>sruToSrd ainda não está implementado</p>
+        <div class="js-view" id="srusrd-view">
+          <div class="l-srusrd-container">
+            <div class="c-srusrd">
+              <h1 class="c-srusrd__title">SRU para SRD</h1>
+              <form
+                class="c-srusrd__form"
+                action="javascript:void(0);"
+                method="POST"
+                id="srusrd-form"
+              >
+                <div class="c-srusrd__limit-cards">
+                  <div class="c-srusrd__card c-srusrd__card--limit">
+                    <h2 class="c-srusrd__card-title">SRU</h2>
+                    <div class="c-srusrd__form-row">
+                      <div class="c-srusrd__form-group">
+                        <label class="c-srusrd__form-label">Xmin</label>
+                        <input
+                          class="c-srusrd__input"
+                          type="number"
+                          id="srusrd-sruXmin"
+                          required
+                          min="0"
+                        />
+                      </div>
+                      <div class="c-srusrd__form-group">
+                        <label class="c-srusrd__form-label">Ymin</label>
+                        <input
+                          class="c-srusrd__input"
+                          type="number"
+                          id="srusrd-sruYmin"
+                          required
+                          min="0"
+                        />
+                      </div>
+                    </div>
+                    <div class="c-srusrd__form-row">
+                      <div class="c-srusrd__form-group">
+                        <label class="c-srusrd__form-label">Xmáx</label>
+                        <input
+                          class="c-srusrd__input"
+                          type="number"
+                          id="srusrd-sruXmax"
+                          required
+                          min="1"
+                        />
+                      </div>
+                      <div class="c-srusrd__form-group">
+                        <label class="c-srusrd__form-label">Ymáx</label>
+                        <input
+                          class="c-srusrd__input"
+                          type="number"
+                          id="srusrd-sruYmax"
+                          required
+                          min="1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-srusrd__card c-srusrd__card--limit">
+                    <h2 class="c-srusrd__card-title">SRD</h2>
+                    <div class="c-srusrd__form-row">
+                      <div class="c-srusrd__form-group">
+                        <label class="c-srusrd__form-label">Xmin</label>
+                        <input
+                          class="c-srusrd__input"
+                          type="number"
+                          id="srusrd-srdXmin"
+                          required
+                          min="0"
+                        />
+                      </div>
+                      <div class="c-srusrd__form-group">
+                        <label class="c-srusrd__form-label">Ymin</label>
+                        <input
+                          class="c-srusrd__input"
+                          type="number"
+                          id="srusrd-srdYmin"
+                          required
+                          min="0"
+                        />
+                      </div>
+                    </div>
+                    <div class="c-srusrd__form-row">
+                      <div class="c-srusrd__form-group">
+                        <label class="c-srusrd__form-label">Xmáx</label>
+                        <input
+                          class="c-srusrd__input"
+                          type="number"
+                          id="srusrd-srdXmax"
+                          required
+                          min="1"
+                        />
+                      </div>
+                      <div class="c-srusrd__form-group">
+                        <label class="c-srusrd__form-label">Ymáx</label>
+                        <input
+                          class="c-srusrd__input"
+                          type="number"
+                          id="srusrd-srdYmax"
+                          required
+                          min="1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="c-srusrd__calculate-cards">
+                  <div class="c-srusrd__card">
+                    <h2 class="c-srusrd__card-title">SRU</h2>
+                    <div class="c-srusrd__form-row">
+                      <div class="c-srusrd__form-group">
+                        <label class="c-srusrd__form-label">X</label>
+                        <input
+                          class="c-srusrd__input"
+                          type="number"
+                          id="srusrd-sru-x"
+                          required
+                          min="0"
+                        />
+                      </div>
+                      <div class="c-srusrd__form-group">
+                        <label class="c-srusrd__form-label">Y</label>
+                        <input
+                          class="c-srusrd__input"
+                          type="number"
+                          id="srusrd-sru-y"
+                          required
+                          min="0"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <button class="c-srusrd__submit" type="submit">
+                    Calcular
+                  </button>
+                  <div class="c-srusrd__card">
+                    <h2 class="c-srusrd__card-title">SRD</h2>
+                    <div class="c-srusrd__form-row">
+                      <div class="c-srusrd__form-group">
+                        <label class="c-srusrd__form-label">X</label>
+                        <input
+                          class="c-srusrd__input"
+                          type="number"
+                          id="srusrd-srd-x"
+                          readonly
+                        />
+                      </div>
+                      <div class="c-srusrd__form-group">
+                        <label class="c-srusrd__form-label">Y</label>
+                        <input
+                          class="c-srusrd__input"
+                          type="number"
+                          id="srusrd-srd-y"
+                          readonly
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
         <div class="js-view" id="scale-view">
           <p>scale ainda não está implementado</p>

@@ -1,0 +1,95 @@
+.l-srusrd-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.c-srusrd {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__form {
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__limit-cards {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+  }
+  &__card {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 8px;
+    &--limit:not(:first-child) {
+      margin-left: 8px;
+    }
+  }
+  &__card-title {
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+  &__form-row {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  &__form-group {
+    &--inline {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 5px;
+      align-items: center;
+    }
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+  }
+  &__form-label {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  &__input {
+    width: 100%;
+    border-width: 1px;
+    border-radius: 5px;
+  }
+  &__calculate-cards {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-gap: 16px;
+    margin-top: 8px;
+  }
+  &__submit {
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: SlateBlue;
+    border-radius: 5px;
+    transition: transform 150ms;
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      background: #584aaf;
+    }
+    &::after {
+      content: '\25ba';
+      padding-left: 0.5em;
+    }
+  }
+}

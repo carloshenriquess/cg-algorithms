@@ -49,42 +49,42 @@ const setupSubmitListener = () => {
 
 const setupInputListeners = () => {
   inputSruXmin.addEventListener('input', event => {
-    if (+inputSruXmax.value < +event.target.value) {
+    if (+inputSruXmax.value <= +event.target.value) {
       inputSruXmax.value = +event.target.value + 1;
     }
   });
   inputSruYmin.addEventListener('input', event => {
-    if (+inputSruYmax.value < +event.target.value) {
+    if (+inputSruYmax.value <= +event.target.value) {
       inputSruYmax.value = +event.target.value + 1;
     }
   });
   inputSrdXmin.addEventListener('input', event => {
-    if (+inputSrdXmax.value < +event.target.value) {
+    if (+inputSrdXmax.value <= +event.target.value) {
       inputSrdXmax.value = +event.target.value + 1;
     }
   });
   inputSrdYmin.addEventListener('input', event => {
-    if (+inputSrdYmax.value < +event.target.value) {
+    if (+inputSrdYmax.value <= +event.target.value) {
       inputSrdYmax.value = +event.target.value + 1;
     }
   });
   inputSruXmax.addEventListener('input', event => {
-    if (+inputSruXmin.value > +event.target.value) {
+    if (+inputSruXmin.value >= +event.target.value) {
       inputSruXmin.value = +event.target.value - 1;
     }
   });
   inputSruYmax.addEventListener('input', event => {
-    if (+inputSruYmin.value > +event.target.value) {
+    if (+inputSruYmin.value >= +event.target.value) {
       inputSruYmin.value = +event.target.value - 1;
     }
   });
   inputSrdXmax.addEventListener('input', event => {
-    if (+inputSrdXmin.value > +event.target.value) {
+    if (+inputSrdXmin.value >= +event.target.value) {
       inputSrdXmin.value = +event.target.value - 1;
     }
   });
   inputSrdYmax.addEventListener('input', event => {
-    if (+inputSrdYmin.value > +event.target.value) {
+    if (+inputSrdYmin.value >= +event.target.value) {
       inputSrdYmin.value = +event.target.value - 1;
     }
   });

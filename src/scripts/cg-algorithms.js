@@ -38,11 +38,11 @@ export const sruToSrdFactory = (sruLimits, srdLimits) => {
   const xToSrd = x =>
     ((x - sruLimits.minX) * (srdLimits.maxX - srdLimits.minX)) /
       (sruLimits.maxX - sruLimits.minX) +
-    srdLimits.minX;
+      srdLimits.minX || 0;
   const yToSrd = y =>
     ((y - sruLimits.minY) * (srdLimits.minY - srdLimits.maxY)) /
       (sruLimits.maxY - sruLimits.minY) +
-    srdLimits.maxY;
+      srdLimits.maxY || 0;
   return (x, y) => [xToSrd(x), yToSrd(y)];
 };
 

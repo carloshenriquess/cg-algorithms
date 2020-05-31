@@ -8,14 +8,13 @@ const canvas = document.getElementById('rotation-canvas');
 const context = canvas.getContext('2d');
 const inputAngle = document.getElementById('rotation-angle');
 const inputResolution = document.getElementById('rotation-resolution');
-const inputStroke = document.getElementById('rotation-stroke');
 
 const fillCanvas = color => {
   context.fillStyle = color;
   context.fillRect(0, 0, canvasSize, canvasSize);
 };
 
-const drawObject = ({ object, resolution, lineColor, lineWidth }) => {
+const drawObject = ({ object, resolution, lineColor }) => {
   const sruLimits = {
     minX: -(resolution / 2),
     minY: -(resolution / 2),
@@ -41,7 +40,7 @@ const drawObject = ({ object, resolution, lineColor, lineWidth }) => {
     context.lineTo(...coordinates);
   }
   context.strokeStyle = lineColor;
-  context.lineWidth = lineWidth;
+  context.lineWidth = 1;
   context.stroke();
   context.closePath();
 };
@@ -55,7 +54,6 @@ const setupCanvas = () => {
 const onSubmit = () => {
   const angle = +inputAngle.value;
   const resolution = (inputResolution.value = +inputResolution.value || 0);
-  const lineWidth = (inputStroke.value = +inputStroke.value || 0);
 
   const object = rotation(batmanObject, angle);
 
@@ -63,7 +61,6 @@ const onSubmit = () => {
     object,
     resolution,
     lineColor,
-    lineWidth,
   };
 
   fillCanvas(canvasBgColor);
@@ -75,22 +72,8 @@ const setupSubmitListener = () => {
   form.addEventListener('submit', onSubmit);
 };
 
-// const setupInputListeners = () => {
-//   inputX.addEventListener('input', event => {
-//     if (+inputResolution.value < +event.target.value) {
-//       inputResolution.value = +event.target.value + 1;
-//     }
-//   });
-//   inputY.addEventListener('input', event => {
-//     if (+inputResolution.value < +event.target.value) {
-//       inputResolution.value = +event.target.value + 1;
-//     }
-//   });
-// };
-
 const setupListeners = () => {
   setupSubmitListener();
-  // setupInputListeners();
 };
 
 setupCanvas();
@@ -98,7 +81,6 @@ const drawOptions = {
   object: batmanObject,
   resolution: 60,
   lineColor,
-  lineWidth: 1,
 };
 drawObject(drawOptions);
 setupListeners();

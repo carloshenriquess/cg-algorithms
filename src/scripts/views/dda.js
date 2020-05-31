@@ -26,14 +26,15 @@ const drawPixelFactory = (resolution, lineColor) => {
   const pixelSize = canvasSize / resolution;
   const drawPixelInCanvas = (x, y) => {
     context.fillStyle = lineColor;
+    console.log(y);
     context.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
   };
 
   const sruLimits = {
     minX: 0,
     minY: 0,
-    maxX: resolution,
-    maxY: resolution,
+    maxX: resolution - 1,
+    maxY: resolution - 1,
   };
   const srdLimits = sruLimits;
   const sruToSrd = sruToSrdFactory(sruLimits, srdLimits);
@@ -60,22 +61,22 @@ const setupSubmitListener = () => {
 
 const setupInputListeners = () => {
   inputX1.addEventListener('input', event => {
-    if (+inputResolution.value < +event.target.value) {
+    if (+inputResolution.value <= +event.target.value) {
       inputResolution.value = +event.target.value + 1;
     }
   });
   inputY1.addEventListener('input', event => {
-    if (+inputResolution.value < +event.target.value) {
+    if (+inputResolution.value <= +event.target.value) {
       inputResolution.value = +event.target.value + 1;
     }
   });
   inputX2.addEventListener('input', event => {
-    if (+inputResolution.value < +event.target.value) {
+    if (+inputResolution.value <= +event.target.value) {
       inputResolution.value = +event.target.value + 1;
     }
   });
   inputY2.addEventListener('input', event => {
-    if (+inputResolution.value < +event.target.value) {
+    if (+inputResolution.value <= +event.target.value) {
       inputResolution.value = +event.target.value + 1;
     }
   });

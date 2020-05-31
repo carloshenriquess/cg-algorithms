@@ -31,8 +31,8 @@ const drawPixelFactory = (resolution, lineColor) => {
   const sruLimits = {
     minX: 0,
     minY: 0,
-    maxX: resolution,
-    maxY: resolution,
+    maxX: resolution - 1,
+    maxY: resolution - 1,
   };
   const srdLimits = sruLimits;
   const sruToSrd = sruToSrdFactory(sruLimits, srdLimits);
@@ -58,12 +58,12 @@ const setupSubmitListener = () => {
 
 const setupInputListeners = () => {
   inputX.addEventListener('input', event => {
-    if (+inputResolution.value < +event.target.value) {
+    if (+inputResolution.value <= +event.target.value) {
       inputResolution.value = +event.target.value + 1;
     }
   });
   inputY.addEventListener('input', event => {
-    if (+inputResolution.value < +event.target.value) {
+    if (+inputResolution.value <= +event.target.value) {
       inputResolution.value = +event.target.value + 1;
     }
   });

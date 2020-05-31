@@ -61,22 +61,22 @@ const setupSubmitListener = () => {
 const setupInputListeners = () => {
   inputX1.addEventListener('input', event => {
     if (+inputResolution.value < +event.target.value) {
-      inputResolution.value = event.target.value + 1;
+      inputResolution.value = +event.target.value + 1;
     }
   });
   inputY1.addEventListener('input', event => {
     if (+inputResolution.value < +event.target.value) {
-      inputResolution.value = event.target.value + 1;
+      inputResolution.value = +event.target.value + 1;
     }
   });
   inputX2.addEventListener('input', event => {
     if (+inputResolution.value < +event.target.value) {
-      inputResolution.value = event.target.value + 1;
+      inputResolution.value = +event.target.value + 1;
     }
   });
   inputY2.addEventListener('input', event => {
     if (+inputResolution.value < +event.target.value) {
-      inputResolution.value = event.target.value + 1;
+      inputResolution.value = +event.target.value + 1;
     }
   });
 };

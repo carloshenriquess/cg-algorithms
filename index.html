@@ -532,7 +532,84 @@
           </div>
         </div>
         <div class="js-view" id="translation-view">
-          <p>translation ainda não está implementado</p>
+          <div class="l-translation-container">
+            <div class="c-translation">
+              <h1 class="c-translation__title">Translação</h1>
+              <form
+                class="c-translation__form"
+                action="javascript:void(0);"
+                method="POST"
+                id="translation-form"
+              >
+                <div class="c-translation__inputs">
+                  <div class="c-translation__card">
+                    <h2 class="c-translation__card-title">Translação</h2>
+                    <div class="c-translation__card-inputs">
+                      <div class="c-translation__form-group">
+                        <label class="c-translation__form-label">X</label>
+                        <input
+                          class="c-translation__input"
+                          type="number"
+                          id="translation-x"
+                          min="1"
+                          value="100"
+                          required
+                        />
+                      </div>
+                      <div class="c-translation__form-group">
+                        <label class="c-translation__form-label">Y</label>
+                        <input
+                          class="c-translation__input"
+                          type="number"
+                          id="translation-y"
+                          min="1"
+                          value="100"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-translation__card">
+                    <h2 class="c-translation__card-title">Resolução</h2>
+                    <div class="c-translation__card-inputs">
+                      <div class="c-translation__form-group">
+                        <input
+                          class="c-translation__input"
+                          type="number"
+                          id="translation-resolution"
+                          min="1"
+                          value="60"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-translation__card">
+                    <h2 class="c-translation__card-title">Grossura</h2>
+                    <div class="c-translation__card-inputs">
+                      <div class="c-translation__form-group">
+                        <input
+                          class="c-translation__input"
+                          type="number"
+                          id="translation-stroke"
+                          min="1"
+                          value="1"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="c-translation__submit" type="submit">
+                  Calcular
+                </button>
+              </form>
+            </div>
+            <div class="c-translation-canvas">
+              <h1 class="c-translation-canvas__title">Resultado</h1>
+              <canvas id="translation-canvas"></canvas>
+            </div>
+          </div>
         </div>
         <div class="js-view" id="rotation-view">
           <p>rotation ainda não está implementado</p>

@@ -1,5 +1,7 @@
 import { navigationFactory, setupViews } from './setup.js';
 
 const navigate = navigationFactory();
-navigate.to('dda');
+const params = new URLSearchParams(window.location.search);
+const paramItem = params.get('item');
+navigate.to(paramItem || 'dda');
 setupViews();

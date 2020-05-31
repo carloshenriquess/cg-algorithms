@@ -20,6 +20,9 @@ export const navigationFactory = () => {
     if (selectedItem === item) {
       return;
     }
+    if (!items.find(menuItem => menuItem === item)) {
+      throw 404;
+    }
     selectedItem = item;
     clearViewsButSelected();
     const selectedView = document.getElementById(item + '-view');
